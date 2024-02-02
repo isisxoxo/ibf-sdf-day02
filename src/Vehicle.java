@@ -1,4 +1,4 @@
-public class Vehicle {
+public class Vehicle implements Movable {
 
     /* ATTRIBUTES */
     private String color;
@@ -73,11 +73,11 @@ public class Vehicle {
     }
 
     // public Boolean isStarted() {
-    //     return started;
+    // return started;
     // }
 
     // public void setStarted(Boolean started) {
-    //     this.started = started;
+    // this.started = started;
     // }
 
     /* FUNCTIONS/METHODS */
@@ -87,7 +87,7 @@ public class Vehicle {
                 + year + ", model=" + model + ", make=" + make + "]";
     }
 
-    //Need to check the current status of "started" and "wiperSwiped"
+    // Need to check the current status of "started" and "wiperSwiped"
     public Boolean getStarted() {
         return started;
     }
@@ -106,15 +106,38 @@ public class Vehicle {
     }
 
     public void honk() {
-        System.out.println(("Beep... Beep...")); //Can override this in child Class specific to its honk sound
+        System.out.println(("Beep... Beep...")); // Can override this in child Class specific to its honk sound
     }
-    
+
     public void startSwipe() {
         this.wiperSwiped = true;
     }
 
     public void stopSwipe() {
         this.wiperSwiped = false;
+    }
+
+    /* IMPLEMENT MOVABLE (TO REMOVE ERROR) */
+    @Override
+    public void moveForward() {
+        System.out.println("Vehicle is moving forward...");
+    }
+
+    @Override
+    public void moveBackward() {
+        System.out.println("Vehicle is moving backward...");
+    }
+
+    @Override
+    public void moveLeft() {
+        System.out.println("Vehicle is moving left...");
+    }
+
+    @Override
+    public void moveRight() {
+        // // TODO Auto-generated method stub
+        // throw new UnsupportedOperationException("Unimplemented method 'moveRight'");
+        System.out.println("Vehicle is moving right...");
     }
 
 }

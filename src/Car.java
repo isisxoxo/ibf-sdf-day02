@@ -29,4 +29,24 @@ public class Car extends Vehicle { // Car Class (child) will extend from the Veh
         System.out.println(this.getLicensePlateNo() + " Tuuu... Tuuu... Tuuu..."); // To know which car honked
     }
 
+    @Override
+    public void moveForward() {
+        System.out.println("Car is moving forward...");
+    }
+
+    @Override
+    public void moveBackward() {
+        System.out.println("Car is moving backward...");
+    }
+
+    @Override
+    public void moveLeft() {
+        System.out.println("Car is moving left...");
+    }
+
+    @Override
+    public void moveRight() {
+        System.out.println("Car is moving right...");
+    }
+
 }
