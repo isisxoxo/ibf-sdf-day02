@@ -100,4 +100,9 @@ public class Bus extends Vehicle {
                 + ", backDoorOpened=" + backDoorOpened + "model=" + this.getModel() + "]";
     }
 
+    @Override
+    public void honk() {
+        System.out.println("Booo... Booo... Booo...");
+    }
+
 }

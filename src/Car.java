@@ -26,7 +26,7 @@ public class Car extends Vehicle { // Car Class (child) will extend from the Veh
     /* FUNCTIONS SPECIFIC TO CAR */
     @Override
     public void honk() {
-        System.out.println("Tuuu... Tuuu... Tuuu...");
+        System.out.println(this.getLicensePlateNo() + " Tuuu... Tuuu... Tuuu..."); // To know which car honked
     }
 
 }
