@@ -49,4 +49,13 @@ public class Car extends Vehicle { // Car Class (child) will extend from the Veh
         System.out.println("Car is moving right...");
     }
 
+    @Override
+    public String toString() {
+        return "Car [color=" + this.getColor() + ", capacity=" + this.getCapacity() + ", licensePlateNo=" + this
+                .getLicensePlateNo() + ", year="
+                + this.getYear() + ", model=" + this.getModel() + ", make=" + this.getMake() + ", bodyType=" + bodyType
+                + "]";
+    } // Override Vehicle to string so that it will display as Car [...] instead of
+      // Vehicle [...]
+
 }

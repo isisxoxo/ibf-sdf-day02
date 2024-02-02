@@ -13,14 +13,14 @@ public class Bus extends Vehicle {
     }
 
     public Bus(String color, int capacity, String licensePlateNo, String year, String model, String make,
-            Boolean frontDoor, Boolean backDoor, Boolean frontDoorOpened, Boolean backDoorOpened) {
+            Boolean frontDoor, Boolean backDoor) {
         super(color, capacity, licensePlateNo, year, model, make);
         this.frontDoor = frontDoor;
         this.backDoor = backDoor;
-        this.frontDoorOpened = frontDoorOpened;
-        this.backDoorOpened = backDoorOpened;
-        // this.frontDoor = false;
-        // this.backDoor = false;
+        // this.frontDoorOpened = frontDoorOpened;
+        // this.backDoorOpened = backDoorOpened;
+        this.frontDoorOpened = false;
+        this.backDoorOpened = false; // Default is false since we won't know whether front and back door exists
     }
 
     public Boolean getFrontDoor() {
@@ -56,19 +56,39 @@ public class Bus extends Vehicle {
     // }
 
     public void setDoorStatus(String door) { // door: front or back
+        // if (door.toLowerCase().equals("front")) {
+        // if (frontDoor) { // If frontDoor exists (true)
+        // // open or close the door
+        // this.frontDoorOpened = !this.frontDoorOpened; // if true then change to false
+        // and vice versa
+        // }
+        // } else if (door.toLowerCase().equals("back")) {
+        // if (backDoor) {
+        // // open or close the door
+        // this.backDoorOpened = !this.backDoorOpened;
+        // } else {
+        // System.err.println("There is no " + door + " door.");
+        // }
+        // }
+
         if (door.toLowerCase().equals("front")) {
             if (frontDoor) { // If frontDoor exists (true)
                 // open or close the door
                 this.frontDoorOpened = !this.frontDoorOpened; // if true then change to false and vice versa
             }
-        } else if (door.toLowerCase().equals("back")) {
+        } else {
+            System.err.println("There is no " + door + " door.");
+        }
+
+        if (door.toLowerCase().equals("back")) {
             if (backDoor) {
                 // open or close the door
                 this.backDoorOpened = !this.backDoorOpened;
-            } else {
-                System.err.println("There is no " + door + " door.");
             }
+        } else {
+            System.err.println("There is no " + door + " door.");
         }
+
     }
 
     @Override
@@ -117,7 +137,7 @@ public class Bus extends Vehicle {
     @Override
     public String toString() {
         return "Bus [frontDoor=" + frontDoor + ", backDoor=" + backDoor + ", frontDoorOpened=" + frontDoorOpened
-                + ", backDoorOpened=" + backDoorOpened + "model=" + this.getModel() + "]";
+                + ", backDoorOpened=" + backDoorOpened + ", model=" + this.getModel() + "]";
     }
 
     @Override
